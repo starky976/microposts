@@ -12,7 +12,8 @@
                     <div>
                         <div>
                             {{-- 投稿の所有者のユーザー詳細ページへのリンク --}}
-                            <a class="link link-hover text-info" href="{{ route('users.show', $micropost->user->id) }}">{{ $micropost->user->name }}</a>
+                            <a class="link link-hover text-info"
+                                href="{{ route('users.show', $micropost->user->id) }}">{{ $micropost->user->name }}</a>
                             <span class="text-muted text-gray-500">posted at {{ $micropost->created_at }}</span>
                         </div>
                         <div>
@@ -30,6 +31,7 @@
                                 </form>
                             @endif
                         </div>
+                        @include('favorites.favorites_button')
                     </div>
                 </li>
             @endforeach
